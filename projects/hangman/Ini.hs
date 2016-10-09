@@ -76,6 +76,10 @@ red=intoothandclaw
 data Section = Section Header Assignments deriving (Eq, Show)
 newtype Config = Config (Map Header Assignments) deriving (Eq, Show)
 
+tryAnnot :: (Monad f, CharParsing f) => f Char
+tryAnnot = (try (char '1' >> char '2') <?> "Tried 12")
+       <|> (char '3' <?> "Tried 3")
+
 skipWhitespace :: Parser ()
 skipWhitespace = skipMany (char ' ' <|> char '\n')
 
