@@ -1,0 +1,31 @@
+name:                haskellbook
+version:             0.1.0.0
+synopsis:            Assorted solutions to exercises from the book Haskell Programming from First Principles
+license:             OtherLicense
+license-file:        LICENSE
+author:              Tom Smalley
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+    build-depends:      base
+                      , containers
+                      , transformers
+                      , mtl
+                      , semigroups
+                      , dlist
+                      , random
+                      , split
+                      , bytestring
+                      , text
+                      , hedis
+                      , network-uri
+                      , scotty
+                      , hspec
+                      , QuickCheck
+                      , checkers
+                      , aeson
+                      , trifecta
+                      , raw-strings-qq
+    hs-source-dirs:     src
+    default-language:   Haskell2010
