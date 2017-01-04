@@ -125,7 +125,12 @@ logDay2 = LogDay date2 [activityHome]
 logDay2' = unlines [date2', activityHome']
 logTest = Log [logDay1, logDay2]
 logTest' = unlines [logDay1', logDay2']
-main = hspec $ do
+
+main :: IO ()
+main = print $ parseString logParser mempty exampleLog
+
+test :: IO ()
+test = hspec $ do
     describe "Show instances" $ do
         describe "Basic data type tests" $ do
             it "Shows times of 0 correctly" $ do
